@@ -247,7 +247,7 @@ body {
   height: auto;
   flex-shrink: 0;
 }
-.did-you-know .did-text h2 {
+.did-you-know .did-heading {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-size: 22px;
