@@ -9,7 +9,7 @@
   font-style: normal;
 }
 
-/* Typography mobile first */
+/* Typography */
 h1 {
   font-family: 'Recia', serif;
   font-weight: 700;
@@ -25,7 +25,8 @@ h2 {
   font-weight: 400;
   font-size: 24px;
   color: #692E85;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
+  text-align: center;
 }
 
 h3 {
@@ -70,9 +71,22 @@ body {
 .top-bar {
   background-color: #000;
   color: #fff;
-  text-align: center;
-  padding: 0.5rem;
+  width: 100%;
   font-size: 14px;
+  overflow: hidden;
+}
+
+.scroll-wrapper {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.scroll-text {
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 100%;
+  animation: scroll-left 20s linear infinite;
 }
 
 /* Header */
@@ -132,7 +146,7 @@ body {
   flex-shrink: 0;
 }
 
-/* Did you know (menu version) */
+/* Did you know (menu) */
 .did-you-know-menu {
   display: flex;
   flex-direction: row;
@@ -230,7 +244,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* Did you know (homepage section) */
+/* Did you know (homepage) */
 .did-you-know {
   background-color: #FDCB50;
   color: #1A2A6C;
@@ -247,7 +261,7 @@ body {
   height: auto;
   flex-shrink: 0;
 }
-.did-you-know .did-heading {
+.did-you-know .did-h {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
   font-size: 22px;
@@ -257,6 +271,11 @@ body {
   font-family: 'Space Grotesk', sans-serif;
   font-size: 16px;
   margin: 0;
+}
+.did-you-know, .plan-visit {
+  margin: 3rem 1rem;
+  padding: 2rem;
+  border-radius: 12px;
 }
 
 /* Visit info */
@@ -281,8 +300,9 @@ body {
 }
 .visit-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 2rem 1rem;
 }
 .visit-item {
   background-color: #fff;
@@ -296,8 +316,8 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .visit-item:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transform: none;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
 }
 .visit-icon {
   width: 48px;
@@ -307,6 +327,28 @@ body {
 .visit-label {
   font-size: 14px;
   font-weight: 600;
+}
+
+.visit-hours {
+  background-color: #F9D6E5;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: left;
+}
+
+.visit-hours h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.visit-hours table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.visit-hours td {
+  padding: 0.5rem;
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 /* Coming soon */
@@ -399,6 +441,58 @@ body {
   color: #1A2A6C;
 }
 
+/* Card link */
+
+.intro-text {
+	padding: 2rem 1rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 2rem 1rem;
+}
+
+.grid-text {
+  grid-column: 3 / 10;
+  max-width: 900px;
+  margin: 0 auto;
+  font-size: 18px;
+  line-height: 1.6;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.card-link .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: #fff;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.card-link:hover .card {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transform: scale(1.02);
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 6px;
+}
+
 /* Footer */
 footer {
   background-color: transparent;
@@ -417,12 +511,6 @@ footer {
   text-decoration: none;
   color: #692E85;
 }
-
-.scroll-text {
-	display: inline-block;
-	padding-left: 100%;
-	animation: scroll-left 15s linear infinite;
-  }
 
 @keyframes scroll-left {
   0% {
@@ -445,6 +533,10 @@ footer {
   }
   h3 {
     font-size: 28px;
+	grid-column: 3 / 11;
+	max-width: 1200px;
+	margin: 0 auto 2rem;
+	text-align: center;
   }
   body {
     font-size: 18px;
@@ -460,7 +552,22 @@ footer {
 	white-space: nowrap;
 	width: 100%;
   }
-  
+  .header-inner {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  .header-left {
+    grid-column: 3 / 7;
+  }
+  .header-right {
+    grid-column: 7 / 11;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
   .main-nav {
     display: block;
     background-color: transparent;
@@ -514,10 +621,101 @@ footer {
   }
 
   .card-grid {
-    grid-template-columns: repeat(3, 1fr);
+	display: grid;
+    grid-template-columns: repeat(2, 1fr);
+	grid-column: 3 / 11;
+	max-width: 1200px;
+	gap: 2rem;
+	margin: 0 auto;
   }
+
   .event-feature {
     margin: 4rem auto;
     max-width: 800px;
+  }
+
+  .did-you-know,
+  .plan-visit {
+    grid-column: 3 / 11;
+    max-width: 1200px;
+    margin: 3rem auto;
+  }
+
+  .visit-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    grid-column: 3 / 11;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .visit-item {
+    text-align: left;
+    padding: 2rem;
+  }
+
+  .visit-item h2 {
+    font-size: 28px;
+    margin-bottom: 1rem;
+    text-align: left;
+  }
+
+  .visit-item p {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .visit-icon {
+    width: 72px;
+    margin-bottom: 1rem;
+  }
+
+  .visit-hours {
+    grid-column: span 3;
+    background-color: #F9D6E5;
+    border-radius: 12px;
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+
+  .visit-hours table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .visit-hours td {
+    padding: 0.5rem 1rem;
+    font-size: 18px;
+  }
+
+  .intro-text {
+	display: grid;
+    grid-template-columns: repeat(12, 1fr);
+  }
+  .grid-text {
+    grid-column: 3 / 11;
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: 'Space Grotesk', sans-serif;
+  }
+
+   .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+	grid-column: 3 / 11;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .card-link .card {
+    text-align: left;
+  }
+
+  .card-link .card img {
+    width: 100%;
+    height: auto;
+    margin-top: 1rem;
   }
 }
