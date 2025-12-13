@@ -214,12 +214,14 @@ h3 {
 }
 
 .card-link {
-  height: 100%;
-  width: 100%;
   display: block;
   text-decoration: none;
   color: inherit;
-  margin: 0;
+  border: none;
+  padding: 0;
+  background: none;
+  height: auto;
+  width: auto;
 }
 
 .card {
@@ -335,6 +337,29 @@ h3 {
   width: 100%;
   border-radius: 8px;
   margin-bottom: 1rem;
+}
+
+.event-feature .card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  background: none;
+}
+
+.event-feature .card {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.event-feature .card:hover {
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  transform: scale(1.02);
+}
+
+.event-image {
+  margin-top: 1.5rem;
 }
 
 .intro-text {
