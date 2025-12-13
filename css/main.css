@@ -229,7 +229,6 @@ h3 {
   border-radius: 8px;
   padding: 0.5rem;
   height: 100%;
-  min-height: 500px;
   width: 100%;
   background-color: #fff;
   transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -356,10 +355,6 @@ h3 {
 .event-feature .card:hover {
   box-shadow: 0 6px 16px rgba(0,0,0,0.15);
   transform: scale(1.02);
-}
-
-.event-image {
-  margin-top: 1.5rem;
 }
 
 .intro-text {
